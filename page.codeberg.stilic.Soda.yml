@@ -1,11 +1,11 @@
-app-id: io.github.Faugus.faugus-launcher
+app-id: page.codeberg.stilic.Soda
 sdk: org.gnome.Sdk
 runtime: org.gnome.Platform
 runtime-version: &runtime-version '50'
 x-gl-version: &gl-version '1.4'
 x-gl-versions: &gl-versions 25.08;25.08extra;1.4
 x-gl-merge-dirs: &gl-merge-dirs vulkan/icd.d;glvnd/egl_vendor.d;egl/egl_external_platform.d;OpenCL/vendors;lib/dri;lib/d3d;lib/gbm;vulkan/explicit_layer.d;vulkan/implicit_layer.d
-command: faugus-launcher
+command: soda-launcher
 separate-locales: false # translations
 base: org.winehq.Wine
 base-version: stable-25.08
@@ -94,7 +94,7 @@ modules:
         url: https://gitlab.freedesktop.org/dbus/dbus-python/-/archive/dbus-python-1.4.0/dbus-python-dbus-python-1.4.0.tar.gz
         sha256: da4ee9bbb9eb901d463a7cc9f99dfdbe6c751c8b48b29b78d378985a3c9656ad
 
-  - name: faugus-launcher
+  - name: soda-launcher
     builddir: true
     buildsystem: meson
     build-options:
@@ -102,8 +102,8 @@ modules:
         - -Dflatpak_build=true
     sources:
       - type: archive
-        url: https://github.com/Faugus/faugus-launcher/archive/refs/tags/1.22.4.tar.gz
-        sha256: e5b055e2109fd897a7b1638c9065bcf653218f517ccec2fc0edb691453be5928
+        url: https://codeberg.org/stilic/soda/archive/1.0.0-alpha1.tar.gz
+        sha256: f1df843528d8623410e38bcc9b4c816560aa69c9996df2789276c1ea2c191560
 
     modules:
       - name: imagemagick
